@@ -46,10 +46,10 @@ fis.match('**.less', {
     //    })
     //})
     // 配置相对路径的插件，调整所有静态资源引用为相对路径引用
-    .hook('relative')
-    .match('**', {
-        relative: true
-    })
+    //.hook('relative')
+    //.match('**', {
+    //    relative: true
+    //})
     //.match('/*.html', {
     //    relative: '/'+ appName // 调整为基于页面地址的相对路径
     //})

@@ -74,7 +74,7 @@ app.constant("regexRuleConst", {
                 })
                 .state('test', {
                     url: '/test',
-                    templateUrl: '../../views/index.html'
+                    templateUrl: '/app/views/index.html'
                 });
             $urlRouterProvider.otherwise('/index');
         }
@@ -85,7 +85,7 @@ app.constant("regexRuleConst", {
 // 建议：根据项目需要，入口页面模板使用配置该方案，其他非入口页面还是通过ajax异步请求页面模板
 app.run(['$templateCache', function($templateCache) {
     $templateCache.put("appViews/index.html",
-        "<div class=\"index-page\" ng-controller=\"IndexCtrl\">\r\n    <h3>Index Page</h3>\r\n</div>\r\n\r\n<script type=\"text/javascript\" src=\"../js/controllers/indexCtrl.js\"></script>");
+        "<div class=\"index-page\" ng-controller=\"IndexCtrl\" >\r\n    <div class=\"container\">\r\n        <div class=\"head-pic\">\r\n            <img ng-src=\"{{headPicUrl}}\" alt=\"monkey\">\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<script type=\"text/javascript\" src=\"/app/js/controllers/indexCtrl.js\"></script>");
 }]);
 
 

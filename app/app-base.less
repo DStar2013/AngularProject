@@ -1,0 +1,153 @@
+//引入框架级less
+@import "../framework/less/mixins.less";
+
+//定义一些公用的less文件
+body {
+  background: #f6f6fb;
+  .px2rem(font-size, 28);
+  /* 禁止选中文本 */
+  -webkit-user-select: none;
+  user-select: none;
+  /* iphone样式fix */
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body.account-dialog-open {
+  overflow: hidden;
+}
+
+.clearfix:after {
+  display: block;
+  content: "";
+  clear: both;
+  visibility: hidden;
+  height: 0;
+}
+.clearfix {
+  zoom: 1;
+}
+
+.font26 {
+  .px2rem(font-size, 26);
+}
+
+.font28 {
+  .px2rem(font-size, 28);
+}
+
+.font32 {
+  .px2rem(font-size, 32);
+}
+
+.font40{
+  .px2rem(font-size, 40);
+}
+
+.font-size(@w) {
+  .px2rem(font-size, @w);
+}
+
+
+.linear-gradient(@c1; @c2) {
+  background: -webkit-linear-gradient(@c1, @c2);
+  background: linear-gradient(@c1, @c2);
+}
+
+.linear-gradient(@c1; @c2; @c3) {
+  background: -webkit-linear-gradient(@c1, @c2, @c3);
+  background: linear-gradient(@c1, @c2, @c3);
+}
+
+.radial-gradient(@c1; @c2) {
+  background: -webkit-radial-gradient(@c1, @c2);
+  background: radial-gradient(@c1, @c2);
+}
+
+.border-top (@w; @s; @c) {
+  border-top: 1px @s @c;
+  .px2rem(border-top-width, @w);
+}
+
+.border-bottom (@w; @s; @c) {
+  border-bottom: 1px @s @c;
+  .px2rem(border-bottom-width, @w);
+}
+
+.border-left (@w; @s; @c) {
+  border-left: 1px @s @c;
+  .px2rem(border-left-width, @w);
+}
+
+.border-right (@w; @s; @c) {
+  border-right: 1px @s @c;
+  .px2rem(border-right-width, @w);
+}
+
+.margin-top(@w) {
+  .px2rem(margin-top, @w);
+}
+
+.margin-right(@w) {
+  .px2rem(margin-right, @w);
+}
+
+.margin-bottom(@w) {
+  .px2rem(margin-bottom, @w);
+}
+
+.margin-left(@w) {
+  .px2rem(margin-left, @w);
+}
+
+.padding-top(@w) {
+  .px2rem(padding-top, @w);
+}
+
+.padding-right(@w) {
+  .px2rem(padding-right, @w);
+}
+
+.padding-bottom(@w) {
+  .px2rem(padding-bottom, @w);
+}
+
+.padding-left(@w) {
+  .px2rem(padding-left, @w);
+}
+
+.border-radius(@w) {
+  .px2rem(border-radius, @w);
+}
+
+.height(@w) {
+  .px2rem(height, @w);
+}
+
+.line-height(@w) {
+  .px2rem(line-height, @w);
+}
+
+.width(@w) {
+  .px2rem(width, @w);
+}
+
+//dialog组件弹出样式
+.ngdialog{
+  &.theme-default{
+    &.spinner{
+      .message{
+        .px2rem(width, 100);
+      }
+      &-btn{
+        .btn-close-spinner{
+          .px2rem(right, 10);
+        }
+      }
+    }
+  }
+}
+
+//scroll select
+.scroll-select .select-box {
+  z-index: 20;
+}

@@ -10,7 +10,9 @@
 angular.module('angular_app_sxj').controller("IndexCtrl", ["$rootScope",  "$scope", "$log",
     function($rootScope, $scope, $log) {
 
+        //初始页面头像
+        $scope.headPicUrl = "/app/images/monkey.jpg";
 
-        alert("哈哈，咸鱼的手机世界");
+
     }
 ]);

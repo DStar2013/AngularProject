@@ -1,0 +1,110 @@
+/**
+ * border 1px 实现.
+ * first version: sxj
+ */
+
+.set-border-by-width(@name, @width) when(@width = 0){
+    @{name}: 0;
+}
+.set-border-by-width(@name, @width) when not(@width = 0){
+    @{name}: 1px;
+}
+.color(@name, @color) when (isColor(@color)){
+    @{name}: @color;
+}
+.border-radius(@name, @radius) {
+    @{name}: @radius;
+}
+/*
+* 生成上下左右边框
+* @param width 为4位整数，上右下左分别对应千、百、十、个位，每个位值只有 0或1，0表示该位置无边，1为有
+*  例 0110，表示 4个边框中， 无top、right 1px、bottom 1px、 无left
+*/
+.border-width (@reg, @width, @borderStyle) when (mod(@reg , 10) = 1) {
+  .set-border-by-width(border-left-width, @width);
+  border-left-style: @borderStyle;
+}
+.border-width (@reg, @width, @borderStyle) when (mod(@reg , 100) >= 10) {
+  .set-border-by-width(border-bottom-width, @width);
+  border-bottom-style: @borderStyle;
+}
+.border-width (@reg, @width, @borderStyle) when (mod(@reg , 1000) >= 100) {
+  .set-border-by-width(border-right-width, @width);
+  border-right-style: @borderStyle;
+}
+.border-width (@reg, @width, @borderStyle) when (@reg >= 1000) {
+  .set-border-by-width(border-top-width, @width);
+  border-top-style: @borderStyle;
+}
+
+//
+//.radius-ratio(@radius) when(@radius>0){
+//  .px-to-rem(border-radius, @radius);
+//  @media (-webkit-min-device-pixel-ratio: 2){
+//    &:before {
+//      .px-to-rem(border-radius, @radius*2);
+//    }
+//  }
+//  @media (-webkit-min-device-pixel-ratio: 3){
+//    &:before {
+//      .px-to-rem(border-radius, @radius*3);
+//    }
+//  }
+//}
+
+/*
+* 设置retina显示屏边框1px展示方法
+* @param {number} border-width    set border-width, four numbers express top right bottom left
+* @param {string} borderColor    set border-color, but if value equal 0, express set width equal 0
+* @param {string} radius set border-radius
+* @param {string} borderStyle set   border-style
+*/
+.border-handle(@border-width: 1111, @borderColor: #ddd, @borderStyle: solid, @radius: 0px){
+  & {
+    position: relative;
+  }
+  &:before {
+    //content 移入
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    box-sizing: border-box;
+    pointer-events: none;
+    border:0;
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    /*用虚拟键盘的时候需要z-index，不然border会被遮住*/
+    z-index: 1;
+  }
+  @media (-webkit-min-device-pixel-ratio: 2){
+    &:before {
+      width: 200%;
+      height: 200%;
+      transform: scale(0.5);
+      -webkit-transform: scale(0.5);
+    }
+
+  }
+  @media (-webkit-min-device-pixel-ratio: 3){
+    &:before {
+      width: 300%;
+      height: 300%;
+      transform: scale(0.3333);
+      -webkit-transform: scale(0.3333);
+    }
+  }
+
+  &:before {
+    .border-width(@border-width, @borderColor, @borderStyle);
+    .color(border-color, @borderColor);
+    .border-radius(border-radius, @radius);
+  }
+  //.radius-ratio(@radius);
+}
+
+

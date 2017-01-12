@@ -1,0 +1,99 @@
+/**
+ * lastModify: Atomic
+ */
+/*
+* 设备像素比(device pixel ratio ) dpr = 2
+* 设备独立像素(density-independent pixel) dip: 320px
+* 因此基于的高清视觉稿物理设备像素宽是： 640px（ 如：iphone5一屏物理分辨率：640px * 1136px ）
+* 新视觉稿件采用了iphone6标准，故@standard-width: 375 * 2;
+*/
+/**
+ * 如果当前param单位为px,根据dpr计算[data-dpr]里面的对应px
+ */
+/**
+ * 如果当前param单位为非px，则执行px2auto方法，自动适配
+ */
+/**
+ * 循环编译当前@rest队列里面的param，并放到[data-dpr]的里面
+ */
+/**
+ * 该函数用于设置一些属性值为：字符串/百分比/0等等属性。
+ * 如：margin: auto; 可以用.px2other(margin, auto);实现
+ */
+/**
+ * 该方法对.px2rem,.px2px,.px2other进行了封装，能够传入的参数进行自动判断，
+ * 并采用对应的方法进行计算。
+ * 如：
+ * .px2auto(margin, 0); -> margin:0;
+ * .px2auto(margin, auto); -> margin: auto;
+ * .px2auto(margin, 10%); -> margin: 10%;
+ * .px2auto(margin, 64); -> margin: 1rem;
+ * .px2auto(margin, 64px); -> [data-dpr="2"] {margin:64px;}
+ *                            [data-dpr="4"] {margin:128px;}....
+ *
+ * @rest里面可以传递附加字段。如:.px2auto(margin-left, 10%, important);
+ *
+ */
+/**
+ *此方法为多字段编译的方法。@rest为拓展字段，可以传入N个值
+ *例如：
+ *.px2auto-mulit(margin, 64, 64, 64, 64, important);
+ *      ->  margin:1rem 1rem 1rem 1rem !important;
+ *.px2auto-mulit(padding, 10px, 10%, 64, 2rem, important);
+ *      ->  margin:5px 10% 1rem, 2rem !important;
+ *          [data-dpr="2"]{margin:10px 10% 1rem, 2rem !important; }
+ *          [data-dpr="3"]{margin:15px 10% 1rem, 2rem !important; }
+ *          ....
+ *
+ */
+/**
+ * 动画
+ * @param  {[type]} @name             规定需要绑定到选择器的 keyframe 名称
+ * @param  {[type]} @duration:1s      规定完成动画所花费的时间，以秒或毫秒计。默认1秒
+ * @param  {[type]} @count:1          规定动画应该播放的次数。
+ * @param  {[type]} @direction:linear 规定动画的速度曲线。
+ * @return {[type]}                   [description]
+ */
+body {
+  background: #f6f6fb;
+  font-size: 0.37333333rem;
+  /* 禁止选中文本 */
+  -webkit-user-select: none;
+  user-select: none;
+  /* iphone样式fix */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body.account-dialog-open {
+  overflow: hidden;
+}
+.clearfix:after {
+  display: block;
+  content: "";
+  clear: both;
+  visibility: hidden;
+  height: 0;
+}
+.clearfix {
+  zoom: 1;
+}
+.font26 {
+  font-size: 0.34666667rem;
+}
+.font28 {
+  font-size: 0.37333333rem;
+}
+.font32 {
+  font-size: 0.42666667rem;
+}
+.font40 {
+  font-size: 0.53333333rem;
+}
+.ngdialog.theme-default.spinner .message {
+  width: 1.33333333rem;
+}
+.ngdialog.theme-default.spinner-btn .btn-close-spinner {
+  right: 0.13333333rem;
+}
+.scroll-select .select-box {
+  z-index: 20;
+}

@@ -10,13 +10,15 @@
     <meta name="apple-touch-fullscreen" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <title>咸鱼也要有梦想</title>
-    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <!-- 框架css引入 -->
-
+    <link rel="stylesheet" href="/framework/less/fw-base.css">
+    <!-- page css引入 -->
+    <link rel="stylesheet" href="/app/app.css">
 
     <!-- 适配js adaptive.js -->
-    <script type="text/javascript" src="framework/js/base/adaptive.js"></script>
+    <script type="text/javascript" src="/framework/js/base/adaptive.js"></script>
 
 </head>
 <body>
@@ -34,12 +36,12 @@
     1. 框架级别
     @desc 定义在项目首页必须引入的框架资源
     -->
-    <script src="framework/js/fw-base.js"></script>
+    <script src="/framework/js/fw-base.js"></script>
     <!--
     2. 按需加载实现：先引用入口页面功能相关文件
     -->
-    <script type="text/javascript" src="app/app-base.js"></script>
-    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="/app/app-base.js"></script>
+    <script type="text/javascript" src="/app/app.js"></script>
     <!--<script src="app/js/controllers/MainCtrl.js"></script>-->
 
 </body>
