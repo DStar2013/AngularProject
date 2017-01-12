@@ -5,6 +5,6 @@ angular.module('angular_app_sxj').controller("IndexCtrl", ["$rootScope",  "$scop
     function($rootScope, $scope, $log) {
 
 
-        alert("Index Page");
+        alert("哈哈，咸鱼的手机世界");
     }
 ]);
