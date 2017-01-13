@@ -5,7 +5,7 @@ angular.module('angular_app_sxj').controller("IndexCtrl", ["$rootScope",  "$scop
     function($rootScope, $scope, $log) {
 
         //初始页面头像
-        $scope.headPicUrl = "/app/images/monkey.jpg";
+        $scope.headPicUrl = "../app/images/monkey.jpg";
 
 
     }

@@ -4,7 +4,8 @@
  */
 
 
-var deployDirectory = 'deployed',
+var appName = "AngularProject",
+    deployDirectory = 'deployed',
     deployGlobPatternSet = '!{js/bower_components/**,*.md}';
 fis.util.mkdir(deployDirectory);
 
@@ -46,16 +47,16 @@ fis.match('**.less', {
     //    })
     //})
     // 配置相对路径的插件，调整所有静态资源引用为相对路径引用
-    //.hook('relative')
-    //.match('**', {
-    //    relative: true
-    //})
+    .hook('relative')
+    .match('**', {
+        relative: true
+    })
     //.match('/*.html', {
     //    relative: '/'+ appName // 调整为基于页面地址的相对路径
     //})
-    //.match('*.js', {
-    //    relative: '/' + appName // 调整为基于页面地址的相对路径
-    //})
+    .match('*.js', {
+        relative: '/' + appName // 调整为基于页面地址的相对路径
+    })
     //// 为了保持对外访问入口页面url不变，即排除入口html页面的md5后缀设置
     //.match('**', {
     //    useHash: true
