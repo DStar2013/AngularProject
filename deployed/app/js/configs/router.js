@@ -26,11 +26,15 @@
                 .state('index', {
                     url: '/index',
                     templateUrl: 'appViews/index.html'
-                })
-                .state('test', {
-                    url: '/test',
-                    templateUrl: '../app/views/index.html'
                 });
+            //list 列表页类目
+            $stateProvider
+                .state('list', {
+                    url: '/list',
+                    templateUrl: 'appViews/list.html'
+                });
+
+            //默认路由进入欢迎页面
             $urlRouterProvider.otherwise('/index');
         }
     ]);
@@ -40,7 +44,7 @@
 // 建议：根据项目需要，入口页面模板使用配置该方案，其他非入口页面还是通过ajax异步请求页面模板
 app.run(['$templateCache', function($templateCache) {
     $templateCache.put("appViews/index.html",
-        "<div class=\"index-page\" ng-controller=\"IndexCtrl\" >\r\n    <div class=\"container\">\r\n        <div class=\"head-pic\">\r\n            <img ng-src=\"{{headPicUrl}}\" alt=\"monkey\">\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<script type=\"text/javascript\" src=\"../js/controllers/indexCtrl.js\"></script>");
+        "<div class=\"index-page\" ng-controller=\"IndexCtrl\" >\r\n    <div class=\"container\">\r\n        <div class=\"head-pic\">\r\n            <img ng-src=\"{{headPicUrl}}\" alt=\"monkey\" ng-click=\"goNextPage()\">\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<script type=\"text/javascript\" src=\"../js/controllers/indexCtrl.js\"></script>");
 }]);
 
 

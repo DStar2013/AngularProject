@@ -26,11 +26,15 @@
                 .state('index', {
                     url: '/index',
                     templateUrl: __uri('appViews/index.html')
-                })
-                .state('test', {
-                    url: '/test',
-                    templateUrl: __uri('../../views/index.html')
                 });
+            //list 列表页类目
+            $stateProvider
+                .state('list', {
+                    url: '/list',
+                    templateUrl: __uri('appViews/list.html')
+                });
+
+            //默认路由进入欢迎页面
             $urlRouterProvider.otherwise('/index');
         }
     ]);

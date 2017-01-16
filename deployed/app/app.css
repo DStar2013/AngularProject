@@ -63,6 +63,48 @@ body {
   /* iphone样式fix */
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+body .loading-wrapper {
+  height: 1.46666667rem;
+  padding-left: 0.42666667rem;
+  padding-right: 0.42666667rem;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -0.73333333rem;
+  border-radius: 0.10666667rem;
+}
+body .loading {
+  width: 0.96rem;
+  height: 0.96rem;
+  margin-top: 0.32rem;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-animation: rotation 1s infinite linear;
+  -moz-animation: rotation 1s infinite linear;
+  -o-animation: rotation 1s infinite linear;
+  animation: rotation 1s infinite linear;
+  border-width: 3px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-top-color: #7f7f7f;
+  border-radius: 100%;
+}
+[data-dpr="2"] body .loading {
+  border-width: 6px ;
+}
+[data-dpr="2.5"] body .loading {
+  border-width: 8px ;
+}
+[data-dpr="2.75"] body .loading {
+  border-width: 8px ;
+}
+[data-dpr="3"] body .loading {
+  border-width: 9px ;
+}
+[data-dpr="4"] body .loading {
+  border-width: 12px ;
+}
 body.account-dialog-open {
   overflow: hidden;
 }
@@ -96,6 +138,38 @@ body.account-dialog-open {
 }
 .scroll-select .select-box {
   z-index: 20;
+}
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+@-moz-keyframes rotation {
+  from {
+    -moz-transform: rotate(0);
+  }
+  to {
+    -moz-transform: rotate(359deg);
+  }
+}
+@-o-keyframes rotation {
+  from {
+    -o-transform: rotate(0);
+  }
+  to {
+    -o-transform: rotate(359deg);
+  }
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
 .index-page .container .head-pic {
   width: 2.4rem;

@@ -10,6 +10,32 @@ body {
   user-select: none;
   /* iphone样式fix */
   -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+  //loading
+  .loading-wrapper {
+    .px2rem(height, 110);
+    .px2rem(padding-left, 32);
+    .px2rem(padding-right, 32);
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    .px2rem(margin-top, -55);
+    .px2rem(border-radius, 8);
+  }
+  .loading {
+    .px2rem(width, 72);
+    .px2rem(height, 72);
+    .px2rem(margin-top, 24);
+    margin-left:auto;
+    margin-right:auto;
+    .animation(rotation, 1s, infinite, linear);
+    .px2px(border-width,6px);
+    border-style:solid;
+    border-color: rgba(0,0,0,.1);
+    border-top-color: #7f7f7f;
+    border-radius: 100%;
+  }
 }
 
 body.account-dialog-open {
@@ -150,4 +176,51 @@ body.account-dialog-open {
 //scroll select
 .scroll-select .select-box {
   z-index: 20;
+}
+
+
+
+//动画animation
+@-webkit-keyframes rotation
+{
+  from
+  {
+    -webkit-transform: rotate(0);
+  }to
+   {
+     -webkit-transform: rotate(359deg);
+   }
+}
+
+@-moz-keyframes rotation
+{
+  from
+  {
+    -moz-transform: rotate(0);
+  }to
+   {
+     -moz-transform: rotate(359deg);
+   }
+}
+
+@-o-keyframes rotation
+{
+  from
+  {
+    -o-transform: rotate(0);
+  }to
+   {
+     -o-transform: rotate(359deg);
+   }
+}
+
+@keyframes rotation
+{
+  from
+  {
+    transform: rotate(0);
+  }to
+   {
+     transform: rotate(359deg);
+   }
 }
