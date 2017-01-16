@@ -31,7 +31,7 @@
             $stateProvider
                 .state('list', {
                     url: '/list',
-                    templateUrl: __uri('appViews/list.html')
+                    templateUrl: __uri('../../views/list.html')
                 });
 
             //默认路由进入欢迎页面

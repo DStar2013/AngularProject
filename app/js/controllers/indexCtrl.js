@@ -9,7 +9,7 @@ angular.module('angular_app_sxj').controller("IndexCtrl", ["$rootScope",  "$scop
 
         //
         $scope.goNextPage = function() {
-
+            $state.go("list");
         }
 
     }

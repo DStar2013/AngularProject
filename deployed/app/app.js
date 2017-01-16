@@ -15,8 +15,20 @@ angular.module('angular_app_sxj').controller("IndexCtrl", ["$rootScope",  "$scop
 
         //
         $scope.goNextPage = function() {
-
+            $state.go("list");
         }
 
     }
 ]);
+; //入口欢迎页面
+/**
+ * Created by admin on 2017/1/16.
+ */
+angular.module('angular_app_sxj').controller("ListCtrl", ["$rootScope",  "$scope", "$log", "$state",
+    function($rootScope, $scope, $log, $state) {
+
+
+
+    }
+]);
+; //列表页

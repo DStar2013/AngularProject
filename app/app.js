@@ -4,4 +4,5 @@
 
 
 //pagejs
-__inline("js/controllers/indexCtrl.js")
+__inline("js/controllers/indexCtrl.js"); //入口欢迎页面
+__inline("js/controllers/listCtrl.js"); //列表页
