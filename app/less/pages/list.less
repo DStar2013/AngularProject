@@ -1,2 +1,61 @@
-@import "../../../framework/less/mixins.less";
+@import "../../app-base.less";
 
+.list-page {
+  .font32;
+  .entry {
+    .margin-top(40);
+    //.padding-left(8);
+    //.padding-right(8);
+    .row {
+      display: -webkit-flex;
+      display: flex;
+      width: 100%;
+      .px2rem(height, 220);
+      .margin-bottom(20);
+
+      .col-3 {
+        height: 100%;
+        position: relative;
+        flex: 0 0 33.3333%;
+        max-width: 33.3333%;
+        border-left: 1px solid #fff;
+        a {
+          display: block;
+          height: 100%;
+          -webkit-border-radius: 5px;
+          border-radius: 5px;
+          color: #fff;
+          .px2rem(line-height, 220);
+          background: #3d98ff;
+          text-align: center;
+
+          em {
+            display: block;
+            position: absolute;
+            font-style: normal;
+            width: 100%;
+            height: auto;
+            left: 0;
+            top: 0;
+            .px2rem(margin-top, -36);
+          }
+        }
+
+        .xy-assembly {
+          .i-assembly {
+            .px2rem(width, 86);
+            .px2rem(height, 86);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            .px2rem(margin-left, -43);
+            .px2rem(margin-top, -12);
+          }
+        }
+
+      }
+
+    }
+  }
+
+}
