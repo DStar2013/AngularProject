@@ -9,6 +9,11 @@ angular.module('angular_app_sxj').controller("ListCtrl", ["$rootScope",  "$scope
         $scope.accountUrl = "../app/images/listIcon/account.png";
         $scope.jjsongUrl = "../app/images/listIcon/jjsong.png";
 
+        $scope.goNextPage = function(url) {
+            $state.go(url);
+        }
+
+        //
 
 
     }

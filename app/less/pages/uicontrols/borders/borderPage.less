@@ -1,0 +1,41 @@
+@import "../../../../../framework/less/mixins.less";
+@import "../../../../../framework/less/border.less";
+
+.container {
+  p {
+    .px2rem(height, 48);
+    .px2rem(line-height, 48);
+    .px2rem(font-size, 28);
+  }
+  div {
+    width: 80%;
+    .px2rem(height, 80);
+    margin: 0 auto;
+  }
+
+
+  //以下为使用的demo
+  //************
+  .bh-default {
+    .border-handle();
+  }
+  //************
+  .bh-1 {
+    .border-handle(1010);
+  }
+  //************
+  .bh-2 {
+    .border-handle(1110, red);
+  }
+  //************
+  .bh-3 {
+    .border-handle(1110, red, dashed);
+  }
+  //************
+  .bh-4 {
+    .border-handle(1110, red, solid, 10px);
+  }
+  //
+}
+
+

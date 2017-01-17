@@ -15,3 +15,15 @@ app.constant("regexRuleConst", {
     "otpInput": /^\d{6}$/
 });
 
+/*
+ * 定义uicontrols列表页的内容
+ */
+app.constant("uicontrolsListConst", [{
+    name: "1px像素边框",
+    routerName: "uicontrols.borders",
+    describe: "1px像素边框"
+}]);
+
+
+
+

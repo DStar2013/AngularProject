@@ -33,6 +33,21 @@
                     url: '/list',
                     templateUrl: '../app/views/list.html'
                 });
+            //UI组件页面
+            $stateProvider
+                .state('uicontrols', {
+                    abstract: true,
+                    url: '/uicontrols',
+                    template: "<div class='inner' ui-view></div>"
+                })
+                .state('uicontrols.list', {
+                    url: '/list',
+                    templateUrl: '../app/views/uicontrols/uicontrolsList.html'
+                })
+                .state('uicontrols.borders', {
+                    url: '/borders',
+                    templateUrl: '../app/views/uicontrols/borders/borderPage.html'
+                });
 
             //默认路由进入欢迎页面
             $urlRouterProvider.otherwise('/index');

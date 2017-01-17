@@ -24,6 +24,18 @@ app.constant("regexRuleConst", {
     "otpInput": /^\d{6}$/
 });
 
+/*
+ * 定义uicontrols列表页的内容
+ */
+app.constant("uicontrolsListConst", [{
+    name: "1px像素边框",
+    routerName: "uicontrols.borders",
+    describe: "1px像素边框"
+}]);
+
+
+
+
 ;
 /*app/js/configs/config.js*/
 /**
@@ -77,6 +89,21 @@ app.constant("regexRuleConst", {
                 .state('list', {
                     url: '/list',
                     templateUrl: '../app/views/list.html'
+                });
+            //UI组件页面
+            $stateProvider
+                .state('uicontrols', {
+                    abstract: true,
+                    url: '/uicontrols',
+                    template: "<div class='inner' ui-view></div>"
+                })
+                .state('uicontrols.list', {
+                    url: '/list',
+                    templateUrl: '../app/views/uicontrols/uicontrolsList.html'
+                })
+                .state('uicontrols.borders', {
+                    url: '/borders',
+                    templateUrl: '../app/views/uicontrols/borders/borderPage.html'
                 });
 
             //默认路由进入欢迎页面
