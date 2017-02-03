@@ -47,7 +47,24 @@
                 .state('uicontrols.borders', {
                     url: '/borders',
                     templateUrl: __uri('../../views/uicontrols/borders/borderPage.html')
+                })
+                .state('uicontrols.dialogs', {
+                    url: '/dialogs',
+                    templateUrl: __uri('../../views/uicontrols/dialogs/dialogsPage.html')
                 });
+
+            //account账户相关
+            $stateProvider
+                .state('account', {
+                    abstract: true,
+                    url: '/account',
+                    template: "<div class='inner' ui-view></div>"
+                })
+                .state('account.index', {
+                    url: '/index',
+                    templateUrl: __uri('../../views/account/accountIndex.html')
+                });
+
 
             //默认路由进入欢迎页面
             $urlRouterProvider.otherwise('/index');

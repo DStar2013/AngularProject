@@ -20,7 +20,7 @@ app.constant("regexRuleConst", {
     "mobile": /^1[3-8][0-9]\d{8}$/, //验证手机号码/^1[3|4|5|8][0-9]\d{4,8}$/
     "empty": /^\s+|\s+$/ig, // 移除字符串空字符串
     "url": /^https?:\/\//,
-    "captchaInput": /^.{4}$/, //TOP 图片验证码的验证表达式
+    "captchaInput": /^.{4}$/, //TOP 图片验证码的验证表达式发
     "otpInput": /^\d{6}$/
 });
 
@@ -31,6 +31,10 @@ app.constant("uicontrolsListConst", [{
     name: "1px像素边框",
     routerName: "uicontrols.borders",
     describe: "1px像素边框"
+},{
+    name: "dialog弹框",
+    routerName: "uicontrols.dialogs",
+    describe: "dialog弹框提示"
 }]);
 
 
@@ -104,7 +108,24 @@ app.constant("uicontrolsListConst", [{
                 .state('uicontrols.borders', {
                     url: '/borders',
                     templateUrl: '../app/views/uicontrols/borders/borderPage.html'
+                })
+                .state('uicontrols.dialogs', {
+                    url: '/dialogs',
+                    templateUrl: '../app/views/uicontrols/dialogs/dialogsPage.html'
                 });
+
+            //account账户相关
+            $stateProvider
+                .state('account', {
+                    abstract: true,
+                    url: '/account',
+                    template: "<div class='inner' ui-view></div>"
+                })
+                .state('account.index', {
+                    url: '/index',
+                    templateUrl: '../app/views/account/accountIndex.html'
+                });
+
 
             //默认路由进入欢迎页面
             $urlRouterProvider.otherwise('/index');

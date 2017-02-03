@@ -63,3 +63,29 @@ angular.module('angular_app_sxj').controller("uicontrolsListCtrl", ["$rootScope"
         }
     }
 ]);; //组件列表页
+/**
+ * Created by admin on 2017/1/19.
+ */
+angular.module('angular_app_sxj').controller("dialogsPageCtrl", ["$rootScope",  "$scope", "$log", "$state",
+    function($rootScope, $scope, $log, $state) {
+
+        //定义
+
+
+    }
+]);; //dialogs组件
+
+
+//account js文件
+/**
+ * Created by admin on 2017/1/19.
+ */
+angular.module('angular_app_sxj').controller("accountIndexCtrl", ["$rootScope",  "$scope", "$log", "$state",
+    function($rootScope, $scope, $log, $state) {
+
+        //定义
+
+
+    }
+]);; //账户等级首页
+

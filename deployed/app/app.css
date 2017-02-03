@@ -281,6 +281,7 @@ body.account-dialog-open {
   box-sizing: border-box;
 }
 .uicontrols-list .row-group .row {
+  position: relative;
   height: 1.17333333rem;
   line-height: 1.17333333rem;
   padding-left: 0.10666667rem;

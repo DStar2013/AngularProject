@@ -1,10 +1,10 @@
 <div class="uicontrols-list" ng-controller="uicontrolsListCtrl">
     <div class="row-group">
-        <div class="row">
-            <div class="row-detail clearfix" ng-repeat="item in cList" ng-click="goNextPage(item.routerName)">
+        <div class="row"  ng-repeat="item in cList">
+            <div class="row-detail clearfix" ng-click="goNextPage(item.routerName)">
                 <div class="title" ng-bind="item.name"></div>
                 <div class="describe">
-                    <span class="d-text" ng-bind="item.describe"</span>
+                    <span class="d-text" ng-bind="item.describe"></span>
                     <img class="d-img" ng-src="{{arrowPicUrl}}" alt="">
                 </div>
             </div>
